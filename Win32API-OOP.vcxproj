@@ -76,13 +76,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Callback.h" />
     <ClInclude Include="MessageBox.h" />
     <ClInclude Include="prototype.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="WindowController.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="callback.cpp" />
+    <ClCompile Include="Callback.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageBox.cpp" />
     <ClCompile Include="Window.cpp" />

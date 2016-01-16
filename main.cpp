@@ -1,3 +1,4 @@
+#include "Callback.h"
 #include "WindowController.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreviousInstance, LPSTR lpCmdLine, int nCmdShow) {
@@ -18,3 +19,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreviousInstance, LPSTR lpCmd
 
 	return lastMessage;
 }
+
+LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
+
+	return Callback::WindowProc(hwnd, msg, wParam, lParam);
+}
+
