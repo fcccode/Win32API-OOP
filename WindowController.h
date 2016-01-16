@@ -5,6 +5,8 @@
 #include <string.h>
 #include <tchar.h>
 
+#include "prototype.h"
+
 class WindowController {
 	public:
 		WindowController(HINSTANCE hInstance, HINSTANCE hPreviousInstance, LPSTR lpCmdLine, int nCmdShow);
@@ -14,12 +16,13 @@ class WindowController {
 		void registerWindow(void);
 		void createWindow(void);
 		void showWindow(void);
-		void startMessageObserver(void);
+		int startMessageObserver(void);
 
 		HWND getHWND(void);
 		UINT getMessage(void);
 		WPARAM getWParam(void);
 		LPARAM getLParam(void);
+		MSG getLoopMessage(void);
 
 		bool isWindowClassRegistered(void);
 		bool isWindowCreated(void);

@@ -3,16 +3,18 @@
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreviousInstance, LPSTR lpCmdLine, int nCmdShow) {
 
 	WindowController* pWndCon;
+	int lastMessage;
+
 	pWndCon = new WindowController(hInstance, hPreviousInstance, lpCmdLine, nCmdShow);
 
 	pWndCon->setupWindow();
 	pWndCon->registerWindow();
 	pWndCon->createWindow();
+	pWndCon->showWindow();
 
-	// todo: display window and start message observer
+	lastMessage = pWndCon->startMessageObserver();
 
 	delete pWndCon;
 
-	return 0;
-
+	return lastMessage;
 }

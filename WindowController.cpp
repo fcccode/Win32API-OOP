@@ -23,8 +23,7 @@ void WindowController::setupWindow(void) {
 	windowClass.hInstance = this->hInstance;
 	windowClass.lpszClassName = _T("testclass");
 	windowClass.lpszMenuName = NULL;
-	// todo: implement callback for the message observing
-	//windowClass.lpfnWndProc = WndProc;
+	windowClass.lpfnWndProc = WndProc;
 	windowClass.cbSize = sizeof(WNDCLASSEX);
 
 	windowClass.style = 0;
@@ -53,9 +52,11 @@ void WindowController::showWindow(void) {
 	UpdateWindow(hwnd);
 }
 
-void WindowController::startMessageObserver(void) {
+int WindowController::startMessageObserver(void) {
 	while (GetMessage(&loopMessage, NULL, 0, 0) > 0) {
 		TranslateMessage(&loopMessage);
 		DispatchMessage(&loopMessage);
 	}
+
+	return loopMessage.wParam;
 }
